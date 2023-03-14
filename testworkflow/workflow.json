@@ -4,7 +4,15 @@
     "actions": {},
     "contentVersion": "1.0.0.0",
     "outputs": {},
-    "triggers": {}
+    "triggers": {
+      "Recurrence": {
+        "recurrence": {
+          "frequency": "Minute",
+          "interval": 15
+        },
+        "type": "Recurrence"
+      }
+    }
   },
   "kind": "Stateful"
 }
