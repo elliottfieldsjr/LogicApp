@@ -1,0 +1,17 @@
+{
+  "serviceProviderConnections": {
+    "keyVault": {
+      "parameterValues": {
+        "VaultUri": "@appsetting('keyVault_VaultUri')",
+        "authProvider": {
+          "Type": "ManagedServiceIdentity"
+        }
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/keyVault"
+      },
+      "displayName": "Connection-to-KeyVault"
+    }
+  },
+  "managedApiConnections": {}
+}
