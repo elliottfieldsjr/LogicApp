@@ -1,7 +1,40 @@
 {
   "definition": {
     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
-    "actions": {},
+    "actions": {
+      "Get_secret": {
+        "inputs": {
+          "parameters": {
+            "secretName": "Message-Trace-Account-UPN"
+          },
+          "serviceProviderConfiguration": {
+            "connectionName": "keyVault",
+            "operationId": "getSecret",
+            "serviceProviderId": "/serviceProviders/keyVault"
+          }
+        },
+        "runAfter": {},
+        "type": "ServiceProvider"
+      },
+      "Get_secret_2": {
+        "inputs": {
+          "parameters": {
+            "secretName": "Message-Trace-Account-Password"
+          },
+          "serviceProviderConfiguration": {
+            "connectionName": "keyVault",
+            "operationId": "getSecret",
+            "serviceProviderId": "/serviceProviders/keyVault"
+          }
+        },
+        "runAfter": {
+          "Get_secret": [
+            "Succeeded"
+          ]
+        },
+        "type": "ServiceProvider"
+      }
+    },
     "contentVersion": "1.0.0.0",
     "outputs": {},
     "triggers": {
