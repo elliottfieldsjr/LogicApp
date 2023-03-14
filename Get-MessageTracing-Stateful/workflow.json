@@ -33,6 +33,26 @@
           ]
         },
         "type": "ServiceProvider"
+      },
+      "HTTP": {
+        "inputs": {
+          "authentication": {
+            "password": "@body('Get_secret_2')?['value']",
+            "type": "Basic",
+            "username": "@body('Get_secret')?['value']"
+          },
+          "headers": {
+            "Accept": "application/octet-stream"
+          },
+          "method": "GET",
+          "uri": "https://outlook.office365.us/ecp/reportingwebservice/reporting.svc/MessageTrace?$format=json"
+        },
+        "runAfter": {
+          "Get_secret_2": [
+            "Succeeded"
+          ]
+        },
+        "type": "Http"
       }
     },
     "contentVersion": "1.0.0.0",
