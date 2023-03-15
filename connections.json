@@ -21,6 +21,7 @@
             "connection": {
                 "id": "@appsetting('AZUREMONITOR_CONNECTION_ID')"
             },
+            "connectionRuntimeUrl": "@appsetting('CONNECTION_RUNTIME_URL')"
             "authentication": {
                 "type": "ManagedServiceIdentity"
             }
