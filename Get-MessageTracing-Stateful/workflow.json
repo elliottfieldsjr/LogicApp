@@ -2,6 +2,34 @@
   "definition": {
     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
     "actions": {
+      "For_each": {
+        "actions": {
+          "Send_Data": {
+            "inputs": {
+              "body": "@{items('For_each')}",
+              "headers": {
+                "Log-Type": "Message-Tracking-Logs"
+              },
+              "host": {
+                "connection": {
+                  "referenceName": "azureloganalyticsdatacollector"
+                }
+              },
+              "method": "post",
+              "path": "/api/logs"
+            },
+            "runAfter": {},
+            "type": "ApiConnection"
+          }
+        },
+        "foreach": "@body('Parse_JSON')?['d']?['results']",
+        "runAfter": {
+          "Parse_JSON": [
+            "Succeeded"
+          ]
+        },
+        "type": "Foreach"
+      },
       "Get_secret": {
         "inputs": {
           "parameters": {
