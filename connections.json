@@ -16,10 +16,10 @@
     "managedApiConnections": {
         "azureloganalyticsdatacollector": {
             "api": {
-                "id": "[concat('/subscriptions/', subscription().id,'/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/azureloganalyticsdatacollector')]"
+                "id": "@appsetting('AZUREMONITOR_API_ID')"
             },
             "connection": {
-                "id": "[concat('/subscriptions/', subscription().id,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Web/connections/azureloganalyticsdatacollector')]"
+                "id": "@appsetting('AZUREMONITOR_CONNECTION_ID')"
             },
             "authentication": {
                 "type": "ManagedServiceIdentity"
