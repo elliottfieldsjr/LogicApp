@@ -8,7 +8,7 @@
                         "inputs": {
                             "body": "@{items('For_each')}",
                             "headers": {
-                                "Log-Type": "Message-Tracking-Logs"
+                                "Log-Type": "Message_Tracking_Logs"
                             },
                             "host": {
                                 "connection": {
