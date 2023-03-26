@@ -28,13 +28,6 @@
                         "Succeeded"
                     ]
                 },
-                "runtimeConfiguration": {
-                    "secureData": {
-                        "properties": [
-                            "outputs"
-                        ]
-                    }
-                },                
                 "type": "Foreach"
             },
             "Get_secret": {
@@ -49,13 +42,6 @@
                     }
                 },
                 "runAfter": {},
-                "runtimeConfiguration": {
-                    "secureData": {
-                        "properties": [
-                            "outputs"
-                        ]
-                    }
-                },                
                 "type": "ServiceProvider"
             },
             "Get_secret_2": {
